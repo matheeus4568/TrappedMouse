@@ -136,6 +136,7 @@ class Maze():
         return
 
     def exitMaze(self, canvas, cell_size):
+        self.__mazeStack.push(self.__entryCell)
         while self.__currentCell is not self.__exitCell:
 
             self.__currentCell.visited = True
@@ -158,7 +159,7 @@ class Maze():
 
             self.__currentCell = self.__mazeStack.top()
             
-            self.showMaze(canvas, cell_size, .5)
+            self.showMaze(canvas, cell_size, .1)
         status.config(text="FIM", bg="#e1b700")
         return
 

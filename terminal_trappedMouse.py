@@ -128,6 +128,7 @@ class Maze():
         return
     
     def exitMaze(self):
+        self.__mazeStack.push(self.__entryCell)
         while (self.__currentCell is not self.__exitCell):
             
             topCell = self.__maze[self.__currentCell.x-1][self.__currentCell.y]
